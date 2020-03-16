@@ -113,3 +113,12 @@ typings/
 
 # slides
 dist
+
+
+Explication.docx
+Explication.pdf
+
+README.txt
+
+react/node_modules
+server/node_modules

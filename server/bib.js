@@ -31,13 +31,13 @@ module.exports.get = async () => {
             }
         }
         if(indexSimilirity != -1) {
-            const { city_name, country_name, name, michelin_award, guide_year, cuisine_type, image, _geoloc } = michelinRestaurants[indexSimilirity];
+            const { city_name, country_name, name, michelin_award, guide_year, cuisine_type, image, _geoloc, url } = michelinRestaurants[indexSimilirity];
             let { street, postcode } = michelinRestaurants[indexSimilirity]._highlightResult;
 
             if(street !== undefined) street = street.value
             if(postcode !== undefined) postcode = postcode.value
 
-            const restaurant = {"address": street, postcode, city_name, country_name, name, michelin_award, guide_year, cuisine_type, image,"geoloc":_geoloc}
+            const restaurant = {"address": street, postcode, city_name, country_name, name, michelin_award, guide_year, cuisine_type, image,"geoloc":_geoloc,"url":"https://guide.michelin.com"+url}
             matechedRestaurants.push(restaurant)
         }
     })

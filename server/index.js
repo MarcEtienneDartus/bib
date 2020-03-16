@@ -1,4 +1,4 @@
-const bib = require('./server/bib');
+const bib = require('./bib');
 var express = require('express');
 
 var app = express();
@@ -6,6 +6,7 @@ var app = express();
 let restaurantsMemory = [];
 
 app.get('/', (req, res) => {
+    res.header("Access-Control-Allow-Origin", "*");
     res.send(restaurantsMemory);
 });
 
